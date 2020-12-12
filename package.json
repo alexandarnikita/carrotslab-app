@@ -1,5 +1,5 @@
 {
-  "name": "carrotslab-app",
+  "name": "carrotslabapp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,6 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "react": "16.13.1",
+    "react-native": "0.63.4",
     "@react-native-community/async-storage": "^1.11.0",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.7.3",
@@ -20,21 +22,19 @@
     "joi": "^17.2.0",
     "lodash": "^4.17.19",
     "moment": "^2.27.0",
-    "react": "16.13.1",
-    "react-native": "0.63.4",
     "react-native-confirmation-code-field": "^6.5.0",
     "react-native-gesture-handler": "^1.7.0",
     "react-native-reanimated": "^1.10.1",
-    "react-native-redash": "^9.6.0",
     "react-native-safe-area-context": "^3.1.1",
     "react-native-screens": "^2.10.0",
-    "react-native-snap-carousel": "^3.8.0",
     "react-native-svg": "^12.1.0",
     "react-native-vector-icons": "^7.0.0",
+    "react-native-snap-carousel": "^3.8.0",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "react-native-redash": "^9.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

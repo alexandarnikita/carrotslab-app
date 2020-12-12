@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { API_SERVER_URL } from '../constants';
-import { MOCK_API } from '../constants';
 
 axios.defaults.baseURL = API_SERVER_URL;
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -10,16 +9,10 @@ const axiosWrapper = apiCall => apiCall.then(res => res.data).catch(err => Promi
 
 let API = {
   auth: {
-    // Login
-    login: credentials => axiosWrapper(axios.post('/api/auth/login', credentials)),
-
     // Characters
-    getCharacters: params => axiosWrapper(axios.get('/api/character', { ...params })),
+    getCharacters: params => axiosWrapper(axios.get('/api/character/', { params: {...params} })),
     getEpisode: id => axiosWrapper(axios.get(`/api/episode/${id}`)),
   },
 };
-
-// FIXME mock api calling here
-//API = MOCK_API;
 
 export { API };

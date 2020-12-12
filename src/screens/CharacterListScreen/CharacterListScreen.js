@@ -69,7 +69,6 @@ const _CharacterListScreen = ({
           placeholder={'Search'}
           onChangeText={e => onChangeSearchKey(e)}
           value={searchKey}
-          keyboardType="phone-pad"
         />
 
         <MeterialIcon name="tune" size={35} style={baseStyles.filterBtn} onPress={onPressFilterBtn} />

@@ -10,9 +10,6 @@ import { ThemeContext } from 'contexts/ThemeContext';
 import NavBar from 'components/NavBar';
 import CustomCarousel from 'components/CustomCarousel';
 
-import profile_img from 'assets/images/profile.png';
-import MeterialIcon from 'react-native-vector-icons/MaterialIcons';
-
 const _CharacterDetailScreen = ({ navigation, ...props }) => {
   const { theme, color } = useContext(ThemeContext);
   const baseStyles = theme.CharacterDetailScreen;
@@ -29,7 +26,7 @@ const _CharacterDetailScreen = ({ navigation, ...props }) => {
         <IconEnt name="chevron-thin-left" size={30} color={color.alternateBtnBg} onPress={onPressBack} />
       </NavBar>
       <View style={baseStyles.container}>
-        <Image source={profile_img} style={baseStyles.image} />
+        <Image source={{ uri: data.image }} style={baseStyles.image} />
         <View style={baseStyles.detailInfoGroup}>
           <View style={baseStyles.detailInfo}>
             <Text style={baseStyles.fieldName}>Name: </Text>

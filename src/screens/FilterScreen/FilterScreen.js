@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Text, SafeAreaView, View, TouchableOpacity } from 'react-native';
+import {Text, SafeAreaView, View, TouchableOpacity, ScrollView} from 'react-native';
 import styled, { css } from 'styled-components/native';
 import IconEnt from 'react-native-vector-icons/Entypo';
 import { ThemeContext } from 'contexts/ThemeContext';
@@ -63,23 +63,24 @@ const _Demo1Screen = ({ navigation, filterOptions, setFilterOptions, getCharacte
       <NavBar title={'Filter'}>
         <IconEnt name="chevron-thin-left" size={30} color={color.alternateBtnBg} onPress={onPressBack} />
       </NavBar>
+      <ScrollView>
+        <View style={baseStyles.container}>
+          <FilterGroup styles={baseStyles} data={filters.name} currentOptions={options} handleChange={handleChange} />
+          <FilterGroup styles={baseStyles} data={filters.species} currentOptions={options} handleChange={handleChange} />
+          <FilterGroup
+              styles={baseStyles}
+              data={filters.type}
+              currentOptions={options}
+              handleChange={handleChange}
+              isVertical={true}
+          />
+          <FilterGroup styles={baseStyles} data={filters.gender} currentOptions={options} handleChange={handleChange} />
+        </View>
 
-      <View style={baseStyles.container}>
-        <FilterGroup styles={baseStyles} data={filters.name} currentOptions={options} handleChange={handleChange} />
-        <FilterGroup styles={baseStyles} data={filters.species} currentOptions={options} handleChange={handleChange} />
-        <FilterGroup
-          styles={baseStyles}
-          data={filters.type}
-          currentOptions={options}
-          handleChange={handleChange}
-          isVertical={true}
-        />
-        <FilterGroup styles={baseStyles} data={filters.gender} currentOptions={options} handleChange={handleChange} />
-      </View>
-
-      <View style={baseStyles.footer}>
-        <PrimaryButton title="Apply Filter" onPress={onPressApplyBtn} style={baseStyles.buttons} />
-      </View>
+        <View style={baseStyles.footer}>
+          <PrimaryButton title="Apply Filter" onPress={onPressApplyBtn} style={baseStyles.buttons} />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
